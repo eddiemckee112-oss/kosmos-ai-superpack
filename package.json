@@ -1,0 +1,24 @@
+{
+  "name": "kosmos-ai-superpack",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "node src/server.js",
+    "gmail:oauth:start": "curl -s http://localhost:3040/gmail/oauth/start",
+    "gmail:pipeline": "node scripts/gmail_pipeline.js",
+    "imap:pull": "node scripts/fetch_imap.js",
+    "ocr:run": "node scripts/run_ocr_queue.js",
+    "pdf:txt": "node scripts/parse_pdf_to_txt.js",
+    "ops:daily": "node scripts/scheduler_daily.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "googleapis": "^140.0.1",
+    "imapflow": "^1.0.164",
+    "node-fetch": "^2.7.0",
+    "pdf-parse": "^1.1.1",
+    "dotenv": "^16.4.5",
+    "body-parser": "^1.20.3"
+  }
+}

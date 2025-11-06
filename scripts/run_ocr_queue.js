@@ -1,0 +1,2 @@
+import fs from 'fs'; export async function runOnce(){ if(!fs.existsSync('./store/ocr_jobs')) return; const jobs=fs.readdirSync('./store/ocr_jobs').filter(f=>f.endsWith('.json')); for(const j of jobs){ const p='./store/ocr_jobs/'+j; const job=JSON.parse(fs.readFileSync(p,'utf8')); fs.writeFileSync('./store/pdfs/'+job.name.replace(/\.(pdf|png|jpg|jpeg)$/i,'' )+'.txt', job.text||''); fs.unlinkSync(p); } }
+if (require.main === module) { runOnce().then(()=>process.exit(0)).catch(e=>{ console.error(e); process.exit(1); }); }

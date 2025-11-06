@@ -1,0 +1,1 @@
+# KOSMOS — AI SUPERPACK\n\n**Install & run**\n```bash\nnpm i\nnpm run dev\n```\nOpen:\n- http://localhost:3040/supplier_inline.html\n- http://localhost:3040/ops_dashboard.html\n\nOptional: copy .env.sample to .env and fill Gmail OAuth to use the Gmail pipeline.\n
